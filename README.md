@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Application Tracker
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+Kanban board for tracking job applications. Sign in with Google, add vacancies, drag them between stages, keep notes.
+
+**[Live →](https://job-tracker-vp.vercel.app)**
+
+![preview](public/projects/job-tracker.png)
+
+---
+
+## What it does
+
+- Google OAuth sign-in via NextAuth v5
+- Kanban board with five columns: **Prospect → Applied → Interview → Offer → Rejected**
+- Cards show company favicon, salary, tags, and date added
+- Drag-and-drop between columns with optimistic updates
+- Slide-over panel with notes, vacancy link, and delete
+- Stats strip: total / applied / interviews / offers / response rate
+
+## Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styles | SCSS (CSS Modules) |
+| ORM | Prisma 7 + @prisma/adapter-pg |
+| Database | PostgreSQL (Neon) |
+| Auth | NextAuth v5 (Google OAuth) |
+| Drag-and-drop | dnd-kit |
+| Deploy | Vercel |
+
+## Running locally
 
 ```bash
+npm install
+cp .env.example .env.local
+# fill in the env vars
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+DATABASE_URL=          # PostgreSQL connection string (e.g. Neon)
+AUTH_SECRET=           # random secret for NextAuth session encryption
+GOOGLE_CLIENT_ID=      # Google OAuth client ID
+GOOGLE_CLIENT_SECRET=  # Google OAuth client secret
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Get a free PostgreSQL database at [neon.tech](https://neon.tech).  
+Create OAuth credentials at [console.cloud.google.com](https://console.cloud.google.com).
