@@ -9,7 +9,7 @@ Kanban board for tracking job applications. Sign in with Google, add vacancies, 
 
 **[Live →](https://job-tracker-vp.vercel.app)**
 
-![preview](public/projects/job-tracker.png)
+![preview](public/job-tracker.png)
 
 ---
 
@@ -24,16 +24,16 @@ Kanban board for tracking job applications. Sign in with Google, add vacancies, 
 
 ## Stack
 
-| Layer | Tech |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript |
-| Styles | SCSS (CSS Modules) |
-| ORM | Prisma 7 + @prisma/adapter-pg |
-| Database | PostgreSQL (Neon) |
-| Auth | NextAuth v5 (Google OAuth) |
-| Drag-and-drop | dnd-kit |
-| Deploy | Vercel |
+| Layer         | Tech                          |
+| ------------- | ----------------------------- |
+| Framework     | Next.js 16 (App Router)       |
+| Language      | TypeScript                    |
+| Styles        | SCSS (CSS Modules)            |
+| ORM           | Prisma 7 + @prisma/adapter-pg |
+| Database      | PostgreSQL (Neon)             |
+| Auth          | NextAuth v5 (Google OAuth)    |
+| Drag-and-drop | dnd-kit                       |
+| Deploy        | Vercel                        |
 
 ## Running locally
 
